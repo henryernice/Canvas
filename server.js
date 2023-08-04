@@ -17,7 +17,7 @@ io.on('connection', (socket) => {
   if (savedDrawingData) {
     socket.emit('initialDraw', savedDrawingData);
   }
-ss
+
   socket.on('draw', (data) => {
     savedDrawingData = data; // Save the received drawing data
     socket.broadcast.emit('draw', data); // Broadcast the drawing data to all other clients
