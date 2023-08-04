@@ -7,6 +7,7 @@ canvas.height = window.innerHeight;
 
 let currentcolor = 1;
 
+
 const colorPalette = [
     'white', 'black', 'red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown',
     'cyan', 'magenta', 'lime', 'indigo', 'teal', 'violet', 'olive', 'navy', 'maroon', 'gray',
@@ -71,6 +72,8 @@ function drawPixel(x, y) {
   socket.emit('draw', canvas.toDataURL()); // Emit drawing data to the server
 }
 
+
+
 function drawlocalpixel(x, y, c) {
     context.fillStyle = c;
     context.fillRect(Math.ceil(x / 20) * 20, Math.ceil(y / 20) * 20 - 20, 20, 80);
@@ -86,3 +89,4 @@ socket.on('initialDraw', (dataURL) => {
   
 
 drawlocalpixel(1, 1, colorPalette[currentcolor]);
+
