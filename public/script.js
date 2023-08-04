@@ -5,7 +5,7 @@ const socket = io(); // Create a socket instance
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let currentcolor = 0;
+let currentcolor = 1;
 
 const colorPalette = [
     'white', 'black', 'red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown',
@@ -85,3 +85,4 @@ socket.on('initialDraw', (dataURL) => {
   });
   
 
+drawlocalpixel(1, 1, colorPalette[currentcolor]);
